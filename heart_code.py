@@ -59,3 +59,5 @@ accuracies = list()
 for i in kernels:
     accuracies.append(svm_trainer(i, X_train, y_train, X_test, y_test))
 print(accuracies)
+print([{kernel:accuracy} for kernel, accuracy in accuracies[0].items() if accuracy == max(accuracies[0].values())][0])
+
